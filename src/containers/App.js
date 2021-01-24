@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import io from 'socket.io-client'
 import Button from '../components/Button'
@@ -8,6 +9,7 @@ import {
   buttonErrorSelector,
   subscribeOnButtonState,
 } from '../store/slices/button'
+
 const socket = io('/')
 
 const App = ({ isActive, error, subscribeOnButtonState }) => {
@@ -32,6 +34,12 @@ const App = ({ isActive, error, subscribeOnButtonState }) => {
       />
     </Layout>
   )
+}
+
+App.propTypes = {
+  isActive: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired,
+  subscribeOnButtonState: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => {
