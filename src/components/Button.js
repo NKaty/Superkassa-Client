@@ -3,10 +3,13 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const StyledButton = styled.button`
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   font-size: 2rem;
   background-color: ${({ btnActive }) => (btnActive ? '#fe7968' : '#ffbdb3')};
+  box-shadow: 0px 0px 28px 4px rgba(0, 0, 0, 0.2);
   height: 150px;
   width: 150px;
   margin: 1rem;
@@ -22,6 +25,7 @@ const StyledButton = styled.button`
 
   :disabled {
     opacity: 0.3;
+    cursor: default;
   }
 `
 
