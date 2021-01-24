@@ -28,6 +28,7 @@ export const subscribeOnButtonState = socket => dispatch => {
   if (socket) {
     socket.on('set-state', data => dispatch(getButtonStateSuccess(data)))
     socket.on('connect_error', () => dispatch(getButtonStateFailure()))
+    socket.emit('new-connection')
   } else {
     dispatch(getButtonStateFailure())
   }
