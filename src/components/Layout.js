@@ -9,7 +9,7 @@ const StyledLayout = styled.div`
   width: 100%;
   height: 100vh;
   margin: 0;
-  background-color: '#f8f9fa';
+  background-color: #f8f9fa;
 `
 
 const Layout = ({ children }) => <StyledLayout>{children}</StyledLayout>
