@@ -11,10 +11,11 @@ import {
 const socket = io('/')
 
 const App = ({ isActive, error, subscribeOnButtonState }) => {
-  console.log('app')
   useEffect(() => {
-    console.log('subscribe')
     subscribeOnButtonState(socket)
+    return () => {
+      if (socket) socket.removeAllListeners()
+    }
   }, [subscribeOnButtonState])
 
   const toggleHandler = event => {
