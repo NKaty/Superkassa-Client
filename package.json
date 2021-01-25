@@ -1,7 +1,14 @@
 {
-  "name": "superkassa",
+  "name": "superkassa-client",
   "version": "0.1.0",
+  "description": "Superkassa test assignment. Client implementation.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NKaty/Superkassa-Client.git"
+  },
   "private": true,
+  "author": "NKaty",
+  "license": "ISC",
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.4",
