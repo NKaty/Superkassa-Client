@@ -29,11 +29,12 @@ const StyledButton = styled.button`
   }
 `
 
-const Button = ({ btnActive, onClickHandler, disabled }) => (
+const Button = ({ btnActive, onClickHandler, disabled, dataTestID }) => (
   <StyledButton
     btnActive={btnActive}
     onClick={onClickHandler}
     disabled={disabled}
+    data-testid={dataTestID}
   >
     {btnActive ? 'On' : 'Off'}
   </StyledButton>
@@ -49,6 +50,7 @@ Button.propTypes = {
   btnActive: PropTypes.bool,
   onClickHandler: PropTypes.func,
   disabled: PropTypes.bool,
+  dataTestID: PropTypes.string,
 }
 
 StyledButton.propTypes = {

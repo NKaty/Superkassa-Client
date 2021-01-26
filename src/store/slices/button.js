@@ -1,11 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+export const initialState = {
+  isActive: false,
+  socketError: false,
+}
+
 const buttonSlice = createSlice({
   name: 'button',
-  initialState: {
-    isActive: false,
-    socketError: false,
-  },
+  initialState: initialState,
   reducers: {
     setButtonState: (state, { payload }) => {
       state.isActive = payload

@@ -12,10 +12,13 @@ const StyledLayout = styled.div`
   background-color: #f8f9fa;
 `
 
-const Layout = ({ children }) => <StyledLayout>{children}</StyledLayout>
+const Layout = ({ children, dataTestID }) => (
+  <StyledLayout data-testid={dataTestID}>{children}</StyledLayout>
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  dataTestID: PropTypes.string,
 }
 
 export default Layout
