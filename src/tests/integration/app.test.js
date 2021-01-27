@@ -83,4 +83,12 @@ describe('App', () => {
 
     expect(button).not.toBeDisabled()
   })
+
+  it('should remove listeners before unmount', () => {
+    jest.spyOn(socket, 'removeAllListeners')
+    const app = customRender(<App />)
+    app.unmount()
+
+    expect(socket.removeAllListeners).toHaveBeenCalledTimes(1)
+  })
 })
