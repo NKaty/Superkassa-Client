@@ -58,11 +58,10 @@ describe('App', () => {
       button: { isActive: true, socketError: false },
     })
     const button = app.getByRole('button')
-    const buttonText = button.textContent
     serverSocket.emit('set-state', false)
-    const newButtonText = button.textContent
+    const buttonText = button.textContent
 
-    expect(buttonText).not.toEqual(newButtonText)
+    expect(buttonText).toEqual('Off')
   })
 
   it('should render the button as disabled on connect_error event', () => {
